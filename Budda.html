@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Power Of Lord Budda</title>
+	<style>
+		body {
+			background-image: url('1.jpg');
+            background-size: cover;
+            height: auto;
+            margin-top: 200px;
+            
+		}
+		
+		.circle-container {
+			position: relative;
+			width: 600px;
+			height: 800px;
+			margin: 0 auto;
+			animation: pulse 2s ease-in-out infinite;
+		}
+		
+		svg {
+			display: block;
+			margin: 0 auto;
+		}
+		
+		.circle {
+			fill: none;
+			stroke-width: 1px;
+			animation: scale 2s ease-in-out infinite;
+		}
+		
+		@keyframes pulse {
+			0% {
+				transform: scale(0.9);
+			}
+			50% {
+				transform: scale(1);
+			}
+			100% {
+				transform: scale(0.9);
+			}
+		}
+		
+		@keyframes scale {
+			0% {
+				r: 10;
+				stroke: rgb(255, 140, 0);
+				opacity: 0.6;
+			}
+			25% {
+				r: 15;
+				stroke: rgb(255, 0, 238);
+				opacity: 0.6;
+			}
+			50% {
+				r: 20;
+				stroke: rgb(225, 255, 0);
+				opacity: 0.8;
+			}
+			75% {
+				r: 25;
+				stroke: rgb(255, 0, 64);
+				opacity: 0.8;
+			}
+			100% {
+				r: 30;
+				stroke: rgb(0, 51, 255);
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="circle-container">
+		<svg viewBox="0 0 100 100">
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(255, 0, 0)" opacity="0.6"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(0, 255, 0)" opacity="0.8"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(0, 0, 255)" opacity="1"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(255, 0, 0)" opacity="0.6"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(0, 255, 0)" opacity="0.8"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(0, 0, 255)" opacity="1"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(255, 0, 0)" opacity="0.6"></circle>
+			<circle class="circle" cx="50" cy="50" r="10" stroke="rgb(0, 255, 0)" opacity="0.8"></circle>
+            <circle class="circle" cx="50" cy="50" r="10" stroke="rgb(0, 0, 255)" opacity="1"></circle>
+</svg>
+</div>
+<script>
+	const circles = document.querySelectorAll('.circle');
+
+	for (let i = 0; i < circles.length; i++) {
+		circles[i].animate(
+			[{r: 10}, {r: 45}],
+			{
+				duration: 3000,
+				delay: i * 250,
+				direction: 'alternate',
+				easing: 'ease-in-out',
+				iterations: Infinity
+			}
+		);
+	}
+</script>
+</body>
+</html>
